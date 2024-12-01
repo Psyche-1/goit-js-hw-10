@@ -33,11 +33,9 @@ const options = {
         message: 'Please choose a date in the future',
       });
       startBtn.disabled = 'true';
-      selector.disabled = 'true';
     } else {
       userSelectedDate = selectedDates[0];
       startBtn.removeAttribute('disabled');
-      selector.removeAttribute('disabled');
     }
   },
 };
