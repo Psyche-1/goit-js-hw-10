@@ -33,9 +33,11 @@ const options = {
         message: 'Please choose a date in the future',
       });
       startBtn.disabled = 'true';
+      selector.disabled = 'true';
     } else {
       userSelectedDate = selectedDates[0];
       startBtn.removeAttribute('disabled');
+      selector.removeAttribute('disabled');
     }
   },
 };
@@ -86,6 +88,7 @@ function startTimer() {
   secondsField.textContent = addLeadingZero(seconds);
 
   startBtn.disabled = 'true';
+  selector.disabled = 'true';
 
   const timerId = setInterval(() => {
     const timeLeft = userSelectedDate - new Date();
@@ -93,6 +96,7 @@ function startTimer() {
 
     if (days === 0 && hours === 0 && minutes === 0 && seconds === 0) {
       startBtn.removeAttribute('disabled');
+      selector.removeAttribute('disabled');
       clearInterval(timerId);
     }
 
